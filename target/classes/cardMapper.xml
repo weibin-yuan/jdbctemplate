@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ywb.dao.CardDao">
+    <insert id="add" parameterType="User">
+        insert into card(name, QQ, job, date, school, number_online, daily_link, oath, brother, where_know)
+         values(#{name}, #{QQ}, #{job}, #{date}, #{school}, #{number_online}, #{daily_link}, #{oath}, #{brother},
+         #{where_know})
+    </insert>
+    <delete id="del" parameterType="Integer" >
+        delete from card where id=#{id}
+    </delete>
+    <update id="update" parameterType="User">
+        update card set name=#{name} where id=#{id}
+    </update>
+    <select id="getAll" resultType="List">
+        select * from card
+    </select>
+    <select id="selectById" resultType="User" parameterType="Integer">
+        select * from card where id=#{id}
+    </select>
+    <select id="selectByName" resultType="User" parameterType="String">
+        select * from card where name=#{name}
+    </select>
+    <select id="selectByNumber" resultType="User" parameterType="int">
+        select * from card where number_online=#{number_online}
+    </select>
+    <select id="count" resultType="int">
+        select count(*) from card
+    </select>
+</mapper>
