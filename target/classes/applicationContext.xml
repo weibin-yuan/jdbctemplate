@@ -24,18 +24,5 @@
     <bean id="cardDao" class="com.ywb.CardDaoImpl">
         <property name="jt" ref="jdbcTemplate"/>
     </bean>
-<!--    spring和mybatis整合-->
-<!--    配置sqlSessionFactory-->
-<!--    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
-<!--&lt;!&ndash;        配置数据源&ndash;&gt;-->
-<!--        <property name="dataSource" ref="dataSource"/>-->
-<!--&lt;!&ndash;        指定mybatis的配置文件&ndash;&gt;-->
-<!--        <property name="configLocation" value="mybatis-config.xml"/>-->
-<!--    </bean>-->
-<!--    &lt;!&ndash; 将sqlSessionTemplate手工注入到SqlSessionDaoSupport中 &ndash;&gt;-->
-<!--    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">-->
-<!--        &lt;!&ndash; 以sqlSessionFactory为参数传入构造函数中 &ndash;&gt;-->
-<!--        <constructor-arg index="0" ref="sqlSessionFactory"/>-->
-<!--    </bean>-->
 
 </beans>

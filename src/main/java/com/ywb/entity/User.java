@@ -19,9 +19,9 @@ public class User {
     private String where_know;
     public User(){
     }
-    public User(String name, long QQ, String job, long date, String school,
+    public User(String name, long QQ, String job, String school,
                 int number_online, String daily_link, String oath, String brother,
-                String where_know) {
+                String where_know, long date, long create_at, long update_at) {
         this.name = name;
         this.QQ = QQ;
         this.job = job;
@@ -32,6 +32,8 @@ public class User {
         this.oath = oath;
         this.brother =brother;
         this.where_know = where_know;
+        this.create_at = create_at;
+        this.update_at = update_at;
     }
 
     /**

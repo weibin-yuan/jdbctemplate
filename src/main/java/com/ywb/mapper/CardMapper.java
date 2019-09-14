@@ -19,6 +19,8 @@ public class CardMapper implements RowMapper<User> {
         user.setOath(rs.getString("oath"));
         user.setBrother(rs.getString("brother"));
         user.setWhere_know(rs.getString("where_know"));
+        user.setCreate_at(rs.getLong("create_at"));
+        user.setUpdate_at(rs.getLong("update_at"));
         return user;
     }
 }

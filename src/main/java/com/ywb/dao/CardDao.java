@@ -5,7 +5,7 @@ import com.ywb.entity.User;
 import java.util.List;
 
 public interface CardDao {
-    void add(User user);
+    void add(RandomCard rc);
     boolean del(Integer id);
     boolean update(User user);
     List<User> getAll();

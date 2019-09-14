@@ -1,6 +1,7 @@
 package com.ywb;
 
 import com.ywb.dao.CardDao;
+import com.ywb.dao.RandomCard;
 import com.ywb.entity.User;
 import com.ywb.mapper.CardMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,15 +19,16 @@ public class CardDaoImpl implements CardDao {
     }
 
     @Override
-    public void add(User user) {
-        Date date = new Date();
-        user.setUpdate_at(date.getTime());
-        user.setCreate_at(date.getTime());
+    public void add(RandomCard rc) {
+//        Date date = new Date();
+//        user.setUpdate_at(date.getTime());
+//        user.setCreate_at(date.getTime());
         try {
             String sql = "insert into card(name, QQ, job, date, school, number_online, daily_link, oath, brother, " +
-                    "where_know) value(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            jt.update(sql, user.getName(), user.getQQ(), user.getJob(), user.getDate(), user.getSchool(), user.getNumber_online(),
-                    user.getDaily_link(), user.getOath(), user.getBrother(), user.getWhere_know());
+                    "where_know, create_at, update_at) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            jt.update(sql, rc.getName(), rc.getQQ(), rc.getJob(), rc.getDate(), rc.getSchool(), rc.getNumber_online(),
+                    rc.getDaily_link(), rc.getOath(), rc.getBrother(), rc.getWhere_know(), rc.getCreate_at(),
+                    rc.getUpdate_at());
         }catch(Exception e) {
             e.printStackTrace();
         }
